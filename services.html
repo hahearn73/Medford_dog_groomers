@@ -1,16 +1,205 @@
 <!DOCTYPE html>
     <head>
+        <title>Services</title>
+        <style>
+  body {
+    font-family: "Helvetica Neue", Helvetica, sans-serif; background-color:#08bac7;
+  }
+  ul.nav {font-family: Verdana; text-align: center; list-style-type: none; margin: 0; padding: 0; overflow: 		hidden; background-color: #333333;}
+    li.nav {float: left;}
+    li.nav a {display: block; color: white; text-align: center; padding: 16px; text-decoration: none;}
+    li.nav a:hover {background-color: #111111;}
+  h1 {margin: 5px;text-align: center;}
+  h3 {
+      font-size: 30px; 
+      text-align: center;
+    }
+  form {
+      text-align: center;
+  }
+  ul.titles{
+      text-align: center;
+  }
+  li.titles{
+      display: inline-block;
+      margin: 80px;
+      margin-bottom: 30px;
+      margin-top: 30px;
+  }
+  .service_type{
+      width: 200px;
+      height: 200px;
+      margin: 30px;
+  }
+  .service_type:hover{
+      border: solid;
+  }
+  .services{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+  }
+  .bookBtn{
+      border: solid 1px #00008B;
+      font-weight: bold;
+      padding: 3px;
+      margin: 30px;
+      display: inline-block;
+
+  }
+  .bookBtn:hover{
+      background-color: #00008B;
+  }
+  .question_service {
+      display: inline;
+      text-align: center;
+  }
+  .questionService {
+      text-align: center;
+      display: none;
+      margin-top: 40px;
+  }
+  .times{
+      display: none;
+  }
+  .dogForm{
+      text-align: center;
+      margin-bottom: 20px;
+  }
+</style>
     </head>
     <body>
         <h1>Services</h1>
-        <ul class="nav">
+	<ul class="nav">
   		<li class="nav"><a href="homepage.html">Home</a></li>  
-  		<li class="nav"><a href="contacts.html">Contact</a></li>
+  		<li class="nav"><a href="contact.html">Contact</a></li>
     	<li class="nav"><a href="faq.html">FAQ</a></li>
-    	<li class="nav"><a href="products_and_services.html">Products and Services</a></li>
+    	<li class="nav"><a href="services.html">Services</a></li>
     	<li class="nav"><a href="careers.html">Careers</a></li>
     	<li class="nav"><a href="events.html">Events</a></li>
     	<li class="nav"><a href="about.html">About Us</a></li>
 	</ul>
+    <h3 id="originalQ">Hello! What is your dog's name? </h3>
+    <script language="javascript">
+    function dogName() {
+        var val = document.getElementById("dog_name").value;
+        document.getElementById("print_name").innerHTML = val;
+        var x = document.getElementById("questionService");
+        x.style.display = "block";
+        var y = document.getElementById("dogForm");
+        y.style.display = "none";
+        var z = document.getElementById("originalQ");
+        z.style.display = "none";
+        console.log("Here");
+    }  
+    </script>
+    <div class="dogForm" id="dogForm">
+        <form id="dog_form">
+            <input type ="text" id="dog_name">
+        </form>
+        <button onclick="return dogName()">Go!</button>
+    </div>    
+    
+    <div class="questionService" id="questionService">
+        <h3 class="question_service">What type of service are you considering for</h3>
+        <h3 id="print_name" class="question_service"></h3> <h3 class="question_service">?</h3>
+    </div>
+    
+    <ul class="titles">
+        <li class="titles">Grooming</li>
+        <li class="titles">Baths</li>
+        <li class="titles">Teeth Cleaning</li>
+        <li class="titles">Nail Trimming</li>
+    </ul>
+    
+    <div class = "services">
+        <a href="#groom"> 
+            <img class="service_type" src="groom.jpg" 
+            alt= "Grooming"/>
+        </a> 
+        <a href="#bath"> 
+            <img class="service_type" src="bath.jpg" 
+            alt= "Bath"/>
+        </a> 
+        <a href="#teeth"> 
+            <img class="service_type" src="teeth.jpg" 
+            alt= "Teeth Cleaning"/>
+        </a> 
+        <a href="#nails"> 
+            <img class="service_type" src="trim.jpg" 
+            alt= "Nail Trim"/>
+        </a> 
+    </div>  
+    <script language="javascript">
+        function schedule (){
+            var x = document.getElementById("groom_times");
+            x.style.display = "block";
+        }
+    </script>  
+    <div id="groom">
+        <h4>Grooming</h4>
+        <p>We provide top-quality grooming for dogs of all breeds and sizes. 
+        </br> What's included:</p>
+        <ul>
+            <li> Cut and Style </li>
+            <li> Shampoo </li>
+            <li> Blow-dry </li>
+            <li> Brushout </li>
+            <li> Nail Trim </li>
+        </ul> 
+        </br> Pricing: </br> </p>
+        <ul>
+            <li> Regular: $100</li>
+            <li> Deluxe: $165 </li>
+        <ul>    
+        <span class ="bookBtn" onclick="return schedule()">Book now</span>
+        <div class="times" id="groom_times">
+        <form  name="times_form">
+            <select name="schedule">
+                <option selected disabled>Available dates and times:</option>
+                <option>3/12 at 10 am</option>
+                <option>3/12 at 11 am</option>
+                <option>3/12 at 12 am</option>
+                <option>3/13 at 10 am</option>
+                <option>3/14 at 10 am</option>
+            </select>
+        </form>
+    </div>
+    </div>
+    <div id="bath">
+        <h4>Baths</h4>
+        <p> We provide top-quality Baths for dogs of all breeds and sizes. 
+        </br> Pricing: </br> </p>
+        <ul>
+            <li> Bath: $50</li>
+            <li> Bubble Bath: $65 </li>
+        <ul> 
+        <span class ="bookBtn">Book now</span>
+
+    </div>
+    <div id="teeth">
+        <h4>Teeth Cleaning</h4>
+        <p> We provide top-quality Teeth Cleaning for dogs of all breeds and sizes. 
+        </br> Pricing: </br> </p>
+        <ul>
+            <li> Cleaning: $10</li>
+            <li> Cleaning and Breath Refresh: $15 </li>
+        <ul> 
+        <span class ="bookBtn">Book now</span>
+
+    </div>
+    <div id="nails">
+        <h4>Nail Trimming</h4>
+        <p> We provide top-quality nail trimming for dogs of all breeds and sizes. 
+        </br> Pricing: </br> </p>
+        <ul>
+            <li> Trim: $10</li>
+            <li> Trim and Buff: $15 </li>
+        <ul>       
+        <span class ="bookBtn">Book now</span>
+        
+    </div>
+    
     </body>
 <html>
