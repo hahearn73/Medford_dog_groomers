@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <head>
         <title>Contact</title>
+        <meta name="keywords" content="dogs, dog grooming, dogs medford, 
+        dog teeth cleaning, dog bath"/>
+        <link rel="stylesheet" href="styles.css">
         <style>
   body {
     font-family: "Helvetica Neue", Helvetica, sans-serif; background-color:#08bac7;
@@ -10,12 +13,15 @@
     li.nav a {display: block; color: white; text-align: center; padding: 16px; text-decoration: none;}
     li.nav a:hover {background-color: #111111;}
   h1 {margin: 5px;text-align: center;}
+  h2{
+      font-size: 30px; 
+  }
   .question{
       margin-bottom: 20px;
   }
   .send{
       height: 40px;
-      width: 180px;
+      width: 200px;
   }
 </style>
 </head>
@@ -32,15 +38,51 @@
   </ul>
     
 <h2>We would love to hear from you!</h2>
-<form>
+<script language="javascript">
+    function validate () {
+        if (document.getElementById("name").value == ""){
+            alert("Must enter a value for the name");
+            document.getElementById("name").focus(); 
+            document.getElementById("name").select();
+            return false;
+        }
+        if (document.getElementById("email").value == ""){
+            alert("Must enter a value for email address");
+            document.getElementById("email").focus(); 
+            document.getElementById("email").select();
+            return false;
+        }
+        if (document.getElementById("number").value == ""){
+            alert("Must enter a value for the phone number");
+            document.getElementById("number").focus(); 
+            document.getElementById("number").select();
+            return false;
+        }
+        if (document.getElementById("drop-down").value == "Choose a Service"){
+            alert("Must select an option for type of service");
+            document.getElementById("drop-down").focus(); 
+            document.getElementById("drop-down").select();
+            return false;
+        }
+        if (document.getElementById("message").value == ""){
+            alert("Please leave a message for us!");
+            document.getElementById("message").focus(); 
+            document.getElementById("message").select();
+            return false;
+        }
+            
+    }
+</script>
+<form class="form" onsubmit="return validate()">
     Name: <br>
-    <input class="question" type = "text"> <br/>
+    <input id="name" class="question" type = "text"> <br/>
     Email address: <br>
-    <input class="question" type = "text"> <br/>
+    <input id="email" class="question" type = "text"> <br/>
     Phone number: <br>
-    <input class="question" type = "text"> <br/>
+    <input id="number" class="question" type = "text"> <br/>
     Which type of service are you interested in? <br>
     <select id="drop-down" class="question">
+        <option>Choose a Service</option>
         <option>Grooming</option>
         <option>Baths</option>
         <option>Teeth Cleaning</option>
@@ -48,10 +90,16 @@
         <option>Other</option>
     </select> <br>
     <label>Your message: </label><br>
-        <textarea class="question" rows=8 cols = 20></textarea> <br>
-    
-    <input class="send" type = "reset" value = "Send"/> 
+        <textarea id="message" class="question" rows=8 cols = 30></textarea> <br>
+    <input class="send" type = "submit" value = "Send"/> 
 </form>
+<footer>
+  <p>Instagram: </p>
+  <p>Facebook: </p>
+  <p>© 2022 Medford Dog Groomers</p>
+  <p><a href="mailto:doggroomers@contact.com">doggroomers@contact.com</a></p>
+</footer>
   </body>
+  
   </html>
   
