@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+
+<html>
+    <head>
+    </head>
+    
+    <style>
+    </style>
+    
+    <script language="javascript">
+        function isAFactor(x,y) {
+          if(y % x == 0 && x != y) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        function findFactors(num) {
+            var factors = [];
+            for(let i = 0; i < num; i++) {
+            if(isAFactor(i, num) == true) {
+                factors.push(i);
+            }
+          }
+          return factors; 
+        }
+
+        //takes array as input
+        function sumFactors(factors) {
+            sum = 0; 
+            for(let i = 0; i < factors.length; i++) {
+            sum += factors[i];
+          }
+          return sum;
+        }
+
+        function isAmicable(x,y) {
+            xFactors = findFactors(x);
+            yFactors = findFactors(y);
+          if(sumFactors(xFactors) == y && sumFactors(yFactors) == x) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+        
+        function validate() { 
+            let x = parseInt(document.getElementById("form").num1.value); 
+            let y = parseInt(document.getElementById("form").num2.value); 
+            if( x == "" || y == "") {
+                alert("Numbers must be filled out");
+                return false;
+            } else {
+                if(isAmicable(x, y) == true) {
+                    document.getElementById("submission").innerHTML = "The numbers " + x + " and " + y + " are amicable";
+                    
+                    document.getElementById("xFactors").innerHTML = "factors of " + x + ": " + findFactors(x);
+                    
+                    document.getElementById("yFactors").innerHTML = "factors of " + y + ": " + findFactors(y);
+                } else {
+                    document.getElementById("submission").innerHTML = "The numbers " + x + " and " + y + " are not amicable";
+                }
+                return true;
+            }
+        }
+        
+    </script>
+    
+    <body>
+        <form name = 'amicableform' method ="get"  action="#" id = "form">
+            Number 1: <input type="text" name = 'num1' id='num1'>
+            Number 2: <input type="text" name = 'num2' id='num2'>
+            <input type="button" value="Submit" onclick = "validate()">
+        </form>
+        
+        <div id = "result">
+            <p id="submission"></p>
+        </div>
+        
+        <div class = "facdisplay">
+            <p id = "xFactors"></p>
+            <p id = "yFactors"></p>
+        </div>
+            
+            
+    </body>
+</html>
+
