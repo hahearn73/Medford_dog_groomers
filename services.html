@@ -7,15 +7,13 @@
         <script src="jquery-3.6.0.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <style>
-            body {
-                font-family: "Helvetica Neue", Helvetica, sans-serif; background-color:#08bac7;
-                    }
-  ul.nav {font-family: Verdana; text-align: center; list-style-type: none; margin: 0; padding: 0; overflow: 		hidden; background-color: #333333;}
-    li.nav {float: left;}
-    li.nav a {display: block; color: white; text-align: center; padding: 16px; text-decoration: none;}
-    li.nav a:hover {background-color: #111111;}
+    ul.nav {font-family: Verdana; text-align: center; list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: white;}
+    li.nav {float: right}
+    li.nav a {display: block; color: black; text-align: center; padding: 16px; text-decoration: none;}
+    li.nav a:hover {background-color: #CED8E8;}
   h1 {margin: 5px;text-align: center;}
   .opener {
+      padding-top: 20px;
       font-size: 30px; 
       text-align: center;
     }
@@ -78,21 +76,29 @@
   .confirmation {
       margin-left: 10px;
   }
-
+  .logo {
+      float: left;
+      height: 125px;
+      width: 125px;
+      
+  }
+  .bodyCode { 
+   background-color: rgba(206, 216, 232, .5); 
+}
 </style>
     </head>
     <body>
         <h1>Services</h1>
-	<ul class="nav">
-  		<li class="nav"><a href="homepage.html">Home</a></li>  
+	<ul class="nav"> 
   		<li class="nav"><a href="contact.html">Contact</a></li>
     	<li class="nav"><a href="faq.html">FAQ</a></li>
     	<li class="nav"><a href="services.html">Services</a></li>
     	<li class="nav"><a href="careers.html">Careers</a></li>
     	<li class="nav"><a href="events.html">Events</a></li>
     	<li class="nav"><a href="about.html">About Us</a></li>
+        <li class="nav"><a href="homepage.html">Home</a></li> 
 	</ul>
-
+    <div class="bodyCode">
     <h2 id="originalQ" class="opener">Hello! What is your dog's name? </h2>
     <script language="javascript">
 
@@ -236,7 +242,6 @@
         <p id="confirmation2" class="confirmation" style="display: none">Appointment Booked!</p>
     </div>
 
-    </div>
     <script language="javascript">
     $(document).ready(function(){
       $("#Btn3").click(function(){
@@ -314,11 +319,10 @@
         </div>
         <p id="confirmation4" class="confirmation" style="display: none">Appointment Booked!</p>
     </div>
+    <br><br>
+    </div>
     <footer>
-        <p>Instagram: </p>
-        <p>Facebook: </p>
-        <p>© 2022 Medford Dog Groomers</p>
-        <p><a href="mailto:doggroomers@contact.com">doggroomers@contact.com</a></p>
+      <p>© 2022 Paw Friends Grooming Service</p>
     </footer>
     </body>
 <html>
