@@ -41,7 +41,7 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      text-align: center;
+      
   }
   .bookBtn{
       border: solid 1px #00008B;
@@ -103,56 +103,29 @@
         <li class="nav"><a href="homepage.html">Home</a></li> 
 	</ul>
     <div class="bodyCode">
-    <h2 id="originalQ" class="opener">Hello! What is your dog's name? </h2>
-    <script language="javascript">
-
-    function dogName() {
-        var val = document.getElementById("dog_name").value;
-        document.getElementById("print_name").innerHTML = val;
-        var x = document.getElementById("questionService");
-        $("dog_name").fadeIn();
-        x.style.display = "block";
-        var y = document.getElementById("dogForm");
-        y.style.display = "none";
-        var z = document.getElementById("originalQ");
-        z.style.display = "none";
-
-    }  
-    </script>
-    <div class="dogForm" id="dogForm">
-        <form id="dog_form">
-            <input type ="text" id="dog_name">
-        </form>
-        <button class="nameBtn" onclick="return dogName()">Go!</button>
-    </div>    
     
-    <div class="questionService" id="questionService">
-        <h2 class="question_service">What type of service are you considering for</h2>
-        <h2 id="print_name" class="question_service"></h2> <h2 class="question_service">?</h2>
-    </div>
-    
-    <div class = "services">
-        <div style="display: inline-block">
+    <div class="services">
+        <div style="display: inline-block; text-align: center">
         <a href="#groom"> 
             <img class="service_type" src="groom.jpg" alt="Grooming"/>
         </a> 
         <p> Grooming </p>
         </div>
-        <div style="display: inline-block">
+        <div style="display: inline-block; text-align: center">
         <a href="#bath"> 
             <img class="service_type" src="bath.jpg" 
             alt= "Bath"/>
         </a> 
         <p> Baths </p>
         </div>
-        <div style="display: inline-block">
+        <div style="display: inline-block; text-align: center">
         <a href="#teeth">  
             <img class="service_type" src="teeth.jpg" 
             alt= "Teeth Cleaning"/>
         </a> 
         <p> Teeth Cleaning </p>
         </div>
-        <div style="display: inline-block">
+        <div style="display: inline-block; text-align: center">
         <a href="#nails"> 
             <img class="service_type" src="trim.jpg" 
             alt= "Nail Trim"/>
